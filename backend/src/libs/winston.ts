@@ -4,7 +4,7 @@ const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
   defaultMeta: {
-    service: 'backend-farmaalerts-service',
+    service: 'backend-farmageo-service',
   },
   transports: [
     new winston.transports.File({
