@@ -2,7 +2,7 @@
 
 ## Environment variables
 
-Don't forgot to copy `.env.development` and paste it as `.env` and add the values that are missing
+Don't forget to copy `.env.development` and paste it as `.env` and add the values that are missing
 
 ## Sentry
 
