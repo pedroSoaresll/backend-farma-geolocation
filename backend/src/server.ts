@@ -34,6 +34,7 @@ global.__rootdir__ = __dirname || process.cwd()
 initSentry()
 /* sentry config ends here */
 
-console.log(process.env.npm_package_version)
+console.log('project version...', process.env.npm_package_version)
+console.log('running on port...', process.env.NODE_PORT)
 
 app.listen(process.env.NODE_PORT)
