@@ -1,9 +1,8 @@
 import { Router } from 'express'
+import NearLocationsController from './app/controllers/NearLocationsController'
 
 const routes = Router()
 
-routes.get('/', async (req, res) => {
-  res.json({ message: 'Hello World' })
-})
+routes.get('/', NearLocationsController.index)
 
 export default routes
