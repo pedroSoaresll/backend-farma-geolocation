@@ -3,6 +3,6 @@ import NearLocationsController from './app/controllers/NearLocationsController'
 
 const routes = Router()
 
-routes.get('/', NearLocationsController.index)
+routes.get('/locations', NearLocationsController.show)
 
 export default routes
