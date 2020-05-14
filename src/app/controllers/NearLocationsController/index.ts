@@ -13,7 +13,7 @@ class NearLocationsController {
 
     const location = await Location.where('locations').within({
       center: [lat, lng],
-      radius: 9 / EARTH_SIZE,
+      radius: 1 / EARTH_SIZE,
       spherical: true,
     })
 

@@ -99,8 +99,8 @@ describe('Near locations controller suite tests', () => {
 
     const request: Request = ({
       query: {
-        lat: -12.12,
-        lng: 24.07,
+        lat: -12.01,
+        lng: 24.009,
       },
     } as unknown) as Request
 
@@ -147,15 +147,15 @@ describe('Near locations controller suite tests', () => {
       particular: false,
       locations: {
         type: 'Point',
-        coordinates: [-12.03, 24.05],
+        coordinates: [-12.01, 24.004],
       },
     }
     await Location.create(locationDocument)
 
     const request: Request = ({
       query: {
-        lat: -12.03,
-        lng: 24.05,
+        lat: -12.003,
+        lng: 24.006,
       },
     } as unknown) as Request
 
