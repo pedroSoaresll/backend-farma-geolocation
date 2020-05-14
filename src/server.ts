@@ -37,4 +37,6 @@ initSentry()
 console.log('project version...', process.env.npm_package_version)
 console.log('running on port...', process.env.NODE_PORT)
 
-app.listen(process.env.NODE_PORT)
+const port = process.env.PORT || process.env.NODE_PORT || 3333
+
+app.listen(port)
