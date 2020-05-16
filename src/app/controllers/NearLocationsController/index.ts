@@ -4,6 +4,10 @@ import validateShowRequest from './showValidation'
 
 const EARTH_SIZE = 3963.2
 
+function convertKmToMiles(km: number): number {
+  return km / 1.609
+}
+
 class NearLocationsController {
   async show(
     req: Request,
@@ -13,7 +17,7 @@ class NearLocationsController {
 
     const location = await Location.where('locations').within({
       center: [lat, lng],
-      radius: 1 / EARTH_SIZE,
+      radius: convertKmToMiles(60) / EARTH_SIZE,
       spherical: true,
     })
 
