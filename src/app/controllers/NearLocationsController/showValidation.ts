@@ -1,6 +1,6 @@
 import { Request } from 'express'
 
-export default function validateShowRequest(req: Request): { lat: number; lng: number } {
+export default function validateShowRequest(req: Request): { lat: number; lng: number; radius: number } {
   const { query } = req
 
   if (!query.lat) {
@@ -23,8 +23,19 @@ export default function validateShowRequest(req: Request): { lat: number; lng: n
     throw new Error('Longitude is not a number')
   }
 
+  let radius = 0
+
+  if (query.radius) {
+    radius = Number(query.radius)
+
+    if (isNaN(radius)) {
+      throw new Error('Radius is not a number')
+    }
+  }
+
   return {
     lat,
     lng,
+    radius,
   }
 }
