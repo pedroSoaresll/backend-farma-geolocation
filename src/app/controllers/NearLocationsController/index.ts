@@ -13,12 +13,12 @@ class NearLocationsController {
     req: Request,
     res: Response<LocationDocument[]>
   ): Promise<Response<LocationDocument[]>> {
-    const { lat, lng, radius } = validateShowRequest(req)
+    const { lat, lng } = validateShowRequest(req)
 
-    const location = await Location.where('locations').within({
-      center: [lat, lng],
-      radius: convertKmToMiles(radius || 50) / EARTH_SIZE,
-      spherical: true,
+    const location = await Location.where('locations').near({
+      center: { type: 'Point', coordinates: [lat, lng] },
+      maxDistance: 15000,
+      spherical: true
     })
 
     return res.json(location)
